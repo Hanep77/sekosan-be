@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Transaction extends Model
 {
@@ -20,4 +21,14 @@ class Transaction extends Model
         "transaction_date",
         "snap_token",
     ];
+
+    public function boardingHouse(): BelongsTo
+    {
+        return $this->belongsTo(BoardingHouse::class, "boarding_house_id");
+    }
+
+    public function room(): BelongsTo
+    {
+        return $this->belongsTo(Room::class, "room_id");
+    }
 }

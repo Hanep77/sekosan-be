@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Facility extends Model
 {
@@ -10,4 +11,9 @@ class Facility extends Model
         "name",
         "description"
     ];
+
+    public function rooms(): BelongsToMany
+    {
+        return $this->belongsToMany(Room::class);
+    }
 }
