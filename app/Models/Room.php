@@ -13,8 +13,8 @@ class Room extends Model
         "boarding_school_id",
         "name",
         "description",
-        "price_per_month",
-        "is_available",
+        "price",
+        "is_avalilable",
         "width",
         "length",
     ];

@@ -11,6 +11,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -29,7 +30,8 @@ class FacilityResource extends Resource
                     ->columnSpan(2)
                     ->required(),
                 Textarea::make('description')
-                    ->columnSpan(2),
+                    ->columnSpan(2)
+                    ->rows(5),
             ]);
     }
 
@@ -37,13 +39,18 @@ class FacilityResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make("name"),
+                TextColumn::make("description")
+                    ->limit(50)
+                    ->default("-")
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
