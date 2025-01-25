@@ -26,7 +26,7 @@ class Room extends Model
 
     public function roomImages(): HasMany
     {
-        return $this->hasMany(Review::class);
+        return $this->hasMany(RoomImage::class);
     }
 
     public function transactions(): HasMany

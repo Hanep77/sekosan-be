@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Rule extends Model
 {
     protected $fillable = [
-        "name",
+        "rule",
         "description"
     ];
 
