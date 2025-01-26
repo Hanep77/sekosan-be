@@ -99,7 +99,7 @@ class BoardingHouseResource extends Resource
                                             ->required(),
                                         Textarea::make('description')
                                             ->columnSpan(2),
-                                        Radio::make("is_avalilable")
+                                        Radio::make("is_available")
                                             ->label("availability")
                                             ->options([
                                                 true => "available",

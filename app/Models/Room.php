@@ -14,7 +14,7 @@ class Room extends Model
         "name",
         "description",
         "price",
-        "is_avalilable",
+        "is_available",
         "width",
         "length",
     ];

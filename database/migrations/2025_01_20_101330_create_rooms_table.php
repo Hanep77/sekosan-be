@@ -16,7 +16,7 @@ return new class () extends Migration {
             $table->string("name");
             $table->text("description")->nullable();
             $table->unsignedInteger("price");
-            $table->boolean("is_avalilable");
+            $table->boolean("is_available");
             $table->string("width");
             $table->string("length");
             $table->timestamps();
