@@ -106,6 +106,11 @@ class BoardingHouseResource extends Resource
                                                 false => "not available"
                                             ])
                                             ->default(true),
+                                        Select::make("facilities")
+                                            ->columnSpan(2)
+                                            ->relationship("facilities", "name")
+                                            ->multiple()
+                                            ->preload(),
                                     ])
                             ])
                     ])
